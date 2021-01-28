@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on My New Hugo Site</title>
-    <link>https://tilschuenemann.github.io/posts/</link>
+    <link>tilschuenemann.github.io/posts/</link>
     <description>Recent content in Posts on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 18 Jan 2021 15:42:48 +0100</lastBuildDate><atom:link href="https://tilschuenemann.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Jan 2021 18:02:44 +0100</lastBuildDate><atom:link href="tilschuenemann.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>My First Post</title>
-      <link>https://tilschuenemann.github.io/posts/my-first-post/</link>
-      <pubDate>Mon, 18 Jan 2021 15:42:48 +0100</pubDate>
+      <title>Hello World</title>
+      <link>tilschuenemann.github.io/posts/hello-world/</link>
+      <pubDate>Thu, 28 Jan 2021 18:02:44 +0100</pubDate>
       
-      <guid>https://tilschuenemann.github.io/posts/my-first-post/</guid>
-      <description></description>
+      <guid>tilschuenemann.github.io/posts/hello-world/</guid>
+      <description>This is my first post on my new hugo website. Here I&amp;rsquo;m gonna write about some projects which I am working on.</description>
     </item>
     
   </channel>
