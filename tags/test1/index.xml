@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>test1 on tils</title>
+    <link>https://tilschuenemann.github.io/tags/test1/</link>
+    <description>Recent content in test1 on tils</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 14 Jan 2021 17:39:18 +0100</lastBuildDate><atom:link href="https://tilschuenemann.github.io/tags/test1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>COD4 Montage - Einleitung und Ablauf</title>
+      <link>https://tilschuenemann.github.io/posts/cod4project_00_uberblick/</link>
+      <pubDate>Thu, 14 Jan 2021 17:39:18 +0100</pubDate>
+      
+      <guid>https://tilschuenemann.github.io/posts/cod4project_00_uberblick/</guid>
+      <description>Einleitung Vor einigen Wochen habe ich ein altes Fragmovie des Spiels Call of Duty 4 (COD4) gesehen. CoD4 ist wohl das von mir meistgespielte Spiel und ich verbinde immernoch eine gewisse Nostalgie mit den diversen Eigenheiten, die dieses Spiel bietet (dazu später vielleicht einen separaten Beitrag). Vor allem die kleine, kompetitive Szene und die Grenzen des Ligaspiels (lediglich drei Waffenklassen und 5-6 spielbare Karten) forderten auf, die Karten und Taktiken zu studieren.</description>
+    </item>
+    
+  </channel>
+</rss>
