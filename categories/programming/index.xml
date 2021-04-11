@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>programming on tils</title>
+    <link>https://tilschuenemann.github.io/categories/programming/</link>
+    <description>Recent content in programming on tils</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 10 Feb 2021 12:10:15 +0100</lastBuildDate><atom:link href="https://tilschuenemann.github.io/categories/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zeitaufwand und Sichtungsmöglichkeiten</title>
+      <link>https://tilschuenemann.github.io/posts/cod4project_02_zeitfaufwand/</link>
+      <pubDate>Wed, 10 Feb 2021 12:10:15 +0100</pubDate>
+      
+      <guid>https://tilschuenemann.github.io/posts/cod4project_02_zeitfaufwand/</guid>
+      <description>Vor dem Sichten der Demos überschlage ich hier einmal den Zeitaufwand und die Möglichkeiten, diesen klein zu halten.
+Zeitaufwand Eine Runde dauert 1:45 Minute. Im Turniermodus werden bis zu zwei Karten á 24 Runden gespielt.
+24 * 105 Sekunden = 2520 Sekunden = 42 Minuten pro Karte  Wenn in jeder Runde in der letzten Sekunde die Bombe platziert wird, erhört sich die Rundendauer um 45 Sekunden:
+24 * 45 Sekunden = 1080 Sekunden = 18 Minuten + 42 Minuten = maximal 60 Minuten pro Karte  Wenn alle meiner 1900 Demos 60 Minuten dauern, entspräche 238 8-Stunden-Arbeitstagen - fast ein ganzes Arbeitsjahr.</description>
+    </item>
+    
+    <item>
+      <title>Demobibliothek und erste Auswertungen</title>
+      <link>https://tilschuenemann.github.io/posts/cod4project_01_demobib/</link>
+      <pubDate>Sat, 30 Jan 2021 17:39:18 +0100</pubDate>
+      
+      <guid>https://tilschuenemann.github.io/posts/cod4project_01_demobib/</guid>
+      <description>Aufbauen einer Demobibliothek Als ich schrieb, dass ich noch alle meine Demos habe, meinte ich einen Ordner, der 20GB Demos enthält, unsortiert ist und in dem die Demos nicht eindeutig benannt sind (unbenannt1, unbenannt2). Und ich weiß nicht genau, welche Demos ich noch schauen muss, um die Timestamps zu erfassen.
+Um Licht ins Dunkel zu bringen, schreibe ich ein Programm in R , welches alle Dateien mit einer Identifikationsnummer und Modifikationsdatum (hier: das Erstelldatum der Demo) versieht und schließlich in einen zentralen Ordner ablegt.</description>
+    </item>
+    
+    <item>
+      <title>COD4 Montage - Einleitung und Ablauf</title>
+      <link>https://tilschuenemann.github.io/posts/cod4project_00_uberblick/</link>
+      <pubDate>Thu, 14 Jan 2021 17:39:18 +0100</pubDate>
+      
+      <guid>https://tilschuenemann.github.io/posts/cod4project_00_uberblick/</guid>
+      <description>Einleitung Vor einigen Wochen habe ich ein altes Fragmovie des Spiels Call of Duty 4 (COD4) gesehen. CoD4 ist wohl das von mir meistgespielte Spiel und ich verbinde immernoch eine gewisse Nostalgie mit den diversen Eigenheiten, die dieses Spiel bietet (dazu später vielleicht einen separaten Beitrag). Vor allem die kleine, kompetitive Szene und die Grenzen des Ligaspiels (lediglich drei Waffenklassen und 5-6 spielbare Karten) forderten auf, die Karten und Taktiken zu studieren.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -2,7 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://tilschuenemann.github.io/categories/</loc>
+    <lastmod>2021-02-10T12:10:15+01:00</lastmod>
+  </url><url>
+    <loc>https://tilschuenemann.github.io/tags/cod4demo/</loc>
+    <lastmod>2021-02-10T12:10:15+01:00</lastmod>
+  </url><url>
     <loc>https://tilschuenemann.github.io/posts/</loc>
+    <lastmod>2021-02-10T12:10:15+01:00</lastmod>
+  </url><url>
+    <loc>https://tilschuenemann.github.io/categories/programming/</loc>
+    <lastmod>2021-02-10T12:10:15+01:00</lastmod>
+  </url><url>
+    <loc>https://tilschuenemann.github.io/tags/</loc>
     <lastmod>2021-02-10T12:10:15+01:00</lastmod>
   </url><url>
     <loc>https://tilschuenemann.github.io/</loc>
@@ -16,14 +28,6 @@
   </url><url>
     <loc>https://tilschuenemann.github.io/posts/cod4project_00_uberblick/</loc>
     <lastmod>2021-01-14T17:39:18+01:00</lastmod>
-  </url><url>
-    <loc>https://tilschuenemann.github.io/tags/</loc>
-    <lastmod>2021-01-14T17:39:18+01:00</lastmod>
-  </url><url>
-    <loc>https://tilschuenemann.github.io/tags/test1/</loc>
-    <lastmod>2021-01-14T17:39:18+01:00</lastmod>
-  </url><url>
-    <loc>https://tilschuenemann.github.io/categories/</loc>
   </url><url>
     <loc>https://tilschuenemann.github.io/series/</loc>
   </url>

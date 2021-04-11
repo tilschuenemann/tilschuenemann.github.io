@@ -7,7 +7,7 @@
 <meta name="robots" content="index, follow">
 <title>Demobibliothek und erste Auswertungen | tils</title>
 
-<meta name="keywords" content="" />
+<meta name="keywords" content="cod4demo" />
 <meta name="description" content="Aufbauen einer Demobibliothek Als ich schrieb, dass ich noch alle meine Demos habe, meinte ich einen Ordner, der 20GB Demos enthält, unsortiert ist und in dem die Demos nicht eindeutig benannt sind (unbenannt1, unbenannt2). Und ich weiß nicht genau, welche Demos ich noch schauen muss, um die Timestamps zu erfassen.
 Um Licht ins Dunkel zu bringen, schreibe ich ein Programm in R , welches alle Dateien mit einer Identifikationsnummer und Modifikationsdatum (hier: das Erstelldatum der Demo) versieht und schließlich in einen zentralen Ordner ablegt.">
 <meta name="author" content="Theme PaperMod">
@@ -48,7 +48,7 @@ Um Licht ins Dunkel zu bringen, schreibe ich ein Programm in R , welches alle Da
   "name": "Demobibliothek und erste Auswertungen",
   "description": "Aufbauen einer Demobibliothek Als ich schrieb, dass ich noch alle meine Demos habe, meinte ich einen Ordner, der 20GB Demos enthält, unsortiert ist und in dem die Demos nicht …",
   "keywords": [
-    
+    "cod4demo"
   ],
   "articleBody": "Aufbauen einer Demobibliothek Als ich schrieb, dass ich noch alle meine Demos habe, meinte ich einen Ordner, der 20GB Demos enthält, unsortiert ist und in dem die Demos nicht eindeutig benannt sind (unbenannt1, unbenannt2). Und ich weiß nicht genau, welche Demos ich noch schauen muss, um die Timestamps zu erfassen.\nUm Licht ins Dunkel zu bringen, schreibe ich ein Programm in R , welches alle Dateien mit einer Identifikationsnummer und Modifikationsdatum (hier: das Erstelldatum der Demo) versieht und schließlich in einen zentralen Ordner ablegt. Zeitgleich erstelle ich eine Tabelle, um eine Datengrundlage für diverse Auswertungen zu schaffen.\nIn der Tabelle stehen die Namen und ehemaligen Dateipfade aller Demos als auch zusätzliche Filterspalten wie Jahr, Monat, Dateigröße. Da ich in der Vergangenheit bereits ein paar Demos gesichtet und die Highlights aufgeschrieben habe, möchte ich dies berücksichtigen und in der Tabelle als gesehen markieren. Hierzu habe ich den Ordnernamen der Demo mit “x” oder “xx” markiert (für sortiert und gesehen, es gibt auch Ordnernamen mit “xo”, sortiert aber nicht gesehen). Für Auswertungszwecke unterscheide ich zwischen dieser automatischen Markierung und der manuellen. Händisch habe ich der Tabelle ebenfalls eine Spalte eingefügt, um mir die Anzahl der als ungesehen markierten Demos auszugeben.\nErste Auswertungen Mithilfe dieser Tabelle erstelle ich nun weitere Auswertungen:\n Wie viele Demos gibt es ingesamt?  1914 Demos   Wie alt sind die jüngsten bzw. ältesten Demos?  Aufnahmedatum der ältesten Demo: 21.10.2011 Aufnahmedatum der jüngsten Demo: 28.01.2016   Wie viele Demos wurden automatisch schon gesichtet bzw. wie viele muss ich noch sichten?  623 Demos wurden schon automatisch gesichtet. 1291 Demos muss ich noch händisch sichten.   Wie ist die Verteilung der Demos über die Jahre und Monate?  Zur Motivation füge ich noch eine weitere Spalte ein. Hier trage ich das Datum der Sichtung ein. So kann ich meinen Fortschritt messen und eine ungefähr schätzen, wie viel Zeit ich noch für die restlichen Sichtungen brauche (basierend auf dem Durchschnitt der letzten sieben Tage):\nZeit für restliche Sichtungen: ca. 20 Wochen. Herzlichen Glückwunsch!\n",
   "wordCount" : "326",
@@ -128,7 +128,17 @@ Um Licht ins Dunkel zu bringen, schreibe ich ein Programm in R , welches alle Da
                 
             </span>
         </div>
-        <ul class="menu" id="menu" onscroll="menu_on_scroll()"></ul>
+        <ul class="menu" id="menu" onscroll="menu_on_scroll()">
+            <li>
+                <a href="https://tilschuenemann.github.io/categories/" title="categories">
+                    <span>categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tilschuenemann.github.io/tags/" title="tags">
+                    <span>tags</span>
+                </a>
+            </li></ul>
     </nav>
 </header>
 
@@ -144,11 +154,22 @@ Um Licht ins Dunkel zu bringen, schreibe ich ein Programm in R , welches alle Da
     </div>
     <div class="post-meta">
 
-January 30, 2021&nbsp;·&nbsp;Theme PaperMod
+January 30, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Theme PaperMod
 
     </div>
   </header> 
 
+  <div class="toc">
+    <details >
+      <summary accesskey="c" title="(Alt + C)">
+        <div class="details">Table of Contents</div>
+      </summary>
+      <div class="inner"><ul><li>
+        <a href="#aufbauen-einer-demobibliothek" aria-label="Aufbauen einer Demobibliothek">Aufbauen einer Demobibliothek</a></li><li>
+        <a href="#erste-auswertungen" aria-label="Erste Auswertungen">Erste Auswertungen</a></li></ul>
+      </div>
+    </details>
+  </div>
   <div class="post-content">
 <h2 id="aufbauen-einer-demobibliothek">Aufbauen einer Demobibliothek<a hidden class="anchor" aria-hidden="true" href="#aufbauen-einer-demobibliothek">#</a></h2>
 <p>Als ich schrieb, dass ich noch alle meine Demos habe, meinte ich einen Ordner, der 20GB Demos enthält, unsortiert ist und in dem die Demos nicht eindeutig benannt sind (unbenannt1, unbenannt2). Und ich weiß nicht genau, welche Demos ich noch schauen muss, um die Timestamps zu erfassen.</p>
@@ -195,6 +216,9 @@ schätzen, wie viel Zeit ich noch für die restlichen Sichtungen brauche (basier
 
 </div>
   <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://tilschuenemann.github.io/tags/cod4demo/">cod4demo</a></li>
+    </ul>
     <nav class="paginav">
       <a class="prev" href="https://tilschuenemann.github.io/posts/cod4project_02_zeitfaufwand/">
         <span class="title">« Prev Page</span>
