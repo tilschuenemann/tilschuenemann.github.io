@@ -1,1 +1,3 @@
 User-agent: *
+Disallow:
+Sitemap: https://www.tilschuenemann.github.io/sitemap.xml
