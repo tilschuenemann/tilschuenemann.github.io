@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>emoji on Til Schünemann</title>
-    <link>https://tilschuenemann.github.io/tags/emoji/</link>
+    <link>https://www.tilschuenemann.github.io/tags/emoji/</link>
     <description>Recent content in emoji on Til Schünemann</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://tilschuenemann.github.io/tags/emoji/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tilschuenemann.github.io/tags/emoji/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Emoji Support</title>
-      <link>https://tilschuenemann.github.io/posts/emoji-support/</link>
+      <link>https://www.tilschuenemann.github.io/posts/emoji-support/</link>
       <pubDate>Tue, 03 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://tilschuenemann.github.io/posts/emoji-support/</guid>
+      <guid>https://www.tilschuenemann.github.io/posts/emoji-support/</guid>
       <description>Emoji can be enabled in a Hugo project in a number of ways.</description>
     </item>
     
