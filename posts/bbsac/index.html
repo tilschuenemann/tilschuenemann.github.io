@@ -30,34 +30,6 @@ I&rsquo;ve seen posts on social media where people would print an albums cover w
         }
 
     </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --hljs-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
-            }
-        }
-
-    </style>
 </noscript><meta property="og:title" content="Bring Back Spotify Album Codes!" />
 <meta property="og:description" content="Spotify launched their codes in ~2019 and now there are many services to leverage this feature, enabling you to get a sticker of your favorite songs code among other products like key fobs, mugs, shirts.
 The code can be scanned by the Spotify App and will play the scanned song / album / artist.
@@ -106,8 +78,8 @@ I&rsquo;ve seen posts on social media where people would print an albums cover w
   "keywords": [
     "projects"
   ],
-  "articleBody": "Spotify launched their codes in ~2019 and now there are many services to leverage this feature, enabling you to get a sticker of your favorite songs code among other products like key fobs, mugs, shirts.\nThe code can be scanned by the Spotify App and will play the scanned song / album / artist.\nI’ve seen posts on social media where people would print an albums cover with the corresponding code and hang it onto their walls. I loved the idea and started with a first batch until I discovered that you couldn’t simply drag-and-drop the album cover plus code into your file explorer to get the image. It wouldn’t appear anywhere in the desktop app and I’ve searched for a long time until I decided to make this a friday night project.\nComponents I’ve decided to do this in Python due to the sheer amount of packages already present.\nThere are three objectives here:\n Get the album cover through the Spotify API Get the corresponding code Merge it all together  Album Cover SpotiPy uses the two environment variables for accessing the API - after that it was quite easy to grab the album cover:\nresults = spotify.album(album_uri) link_to_cover = results[\"images\"][0][\"url\"] cover_size = results[\"images\"][0][\"height\"] Results are already sorted from highest to lowest dimensions.\nSpotify Code Spotify has a website up to download codes only, providing options for background colors, bar color, output format and size.\nI discovered that the download link was parameterized (bottom line):\nThe covers I’ve seen always matched the “average” color of the album art. For this I used colorthief; the bar color would be picked depending on the mean RGB of the average colour. Size is determined by the album cover size. I plug those values into the URL and use PIL to download the picture.\nPutting it all together PIL turned out to be a good option to easily merge two pictures and was a pleasure to work with.\nAfter doing this I’ve added argparse for more robust CLI-behaviour.\n Revisiting this the hardest part was trying to mitigate downloading the pictures to temp. I’ve found this snipped on StackOverflow where somebody came up with a clever solution which I adjusted for my usecase:\nadd snippet here  ",
-  "wordCount" : "371",
+  "articleBody": "Spotify launched their codes in ~2019 and now there are many services to leverage this feature, enabling you to get a sticker of your favorite songs code among other products like key fobs, mugs, shirts.\nThe code can be scanned by the Spotify App and will play the scanned song / album / artist.\nI’ve seen posts on social media where people would print an albums cover with the corresponding code and hang it onto their walls. I loved the idea and started with a first batch until I discovered that you couldn’t simply drag-and-drop the album cover plus code into your file explorer to get the image.\nIt wouldn’t appear anywhere in the desktop app and I’ve searched for a long time until I decided to make this a friday night project.\nAlbum Cover For getting the album cover I used SpotiPy:\n# SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET need to be exported first spotipy = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials()) results = spotipy.album(album_uri) link_to_cover = results[\"images\"][0][\"url\"] cover_size = results[\"images\"][0][\"height\"] Everything I needed was in place; the results were already sorted from highest to lowest dimensions, URL and dimensions are accessible.\nSpotify Code Spotify has a website up to download codes only, providing options for background colors, bar color, output format and size.\nI discovered that the download link was parameterized (bottom line), which saved me a lot of time.\nThe covers I’ve seen always matched the mean color of the album art. For this I used colorthief. Size is determined by the album cover size. I plug those values into the URL and use Pillow to download the picture.\nGetting mean color from file object Revisiting this the hardest part was trying to mitigate downloading the pictures to temp. I’ve found this snippet on StackOverflow where somebody already came up with the following solution, which I adapted:\nwith io.BytesIO() as file_object: pillow_image.save(file_object, \"PNG\") cf = ColorThief(file_object) colours = cf.get_color() Putting it all together Pillow also makes merging two pictures a breeze:\nfinal_height = album_code.size[1] + cover_size im = Image.new(mode=\"RGB\", size=(cover_size, final_height)) im.paste(album_art, (0, 0)) im.paste(album_code, (0, cover_size)) After doing this I’ve added argparse for more robust CLI-behaviour:\n/bin/python bbsac/bbsac.py -h usage: bbsac.py [-h] -u URIS [URIS ...] [-o OUT] options: -h, --help show this help message and exit -u URIS [URIS ...] Spotify album URI(s) -o OUT path to output folder Spotify URIs (Uniform Resource Indicator) can be easily obtained through the share button.\nWhile this part is still manual, I’m satisfied with the end result.\nMy wall now looks like this: You find the repo here.\n",
+  "wordCount" : "422",
   "inLanguage": "en",
   "datePublished": "2022-05-24T13:47:51+02:00",
   "dateModified": "2022-05-24T13:47:51+02:00",
@@ -131,43 +103,13 @@ I&rsquo;ve seen posts on social media where people would print an albums cover w
 </script>
 </head>
 
-<body class="" id="top">
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
-    } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
-    }
-
-</script>
+<body class=" dark" id="top">
 
 <header class="header">
     <nav class="nav">
         <div class="logo">
             <a href="https://www.tilschuenemann.github.io" accesskey="h" title="Til Schünemann (Alt + H)">Til Schünemann</a>
             <span class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
             </span>
         </div>
         <ul id="menu">
@@ -202,34 +144,33 @@ I&rsquo;ve seen posts on social media where people would print an albums cover w
     <h1 class="post-title">
       Bring Back Spotify Album Codes!
     </h1>
-    <div class="post-meta"><span title='2022-05-24 13:47:51 +0200 CEST'>May 24, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Til Schünemann&nbsp;|&nbsp;<a href="https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content/posts/bbsac.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+    <div class="post-meta"><span title='2022-05-24 13:47:51 +0200 CEST'>May 24, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Til Schünemann
 
 </div>
   </header> <div class="toc">
-    <details >
+    <details  open>
         <summary accesskey="c" title="(Alt + C)">
             <span class="details">Table of Contents</span>
         </summary>
 
         <div class="inner"><ul>
                 <li>
-                    <a href="#components" aria-label="Components">Components</a><ul>
-                        
-                <li>
                     <a href="#album-cover" aria-label="Album Cover">Album Cover</a></li>
                 <li>
                     <a href="#spotify-code" aria-label="Spotify Code">Spotify Code</a></li>
                 <li>
+                    <a href="#getting-mean-color-from-file-object" aria-label="Getting mean color from file object">Getting mean color from file object</a></li>
+                <li>
                     <a href="#putting-it-all-together" aria-label="Putting it all together">Putting it all together</a>
                 </li>
-            </ul>
-            </li>
             </ul>
         </div>
     </details>
 </div>
 
-  <div class="post-content"><p>Spotify launched their codes in ~2019 and now there are many services to leverage
+  <div class="post-content"><p><img loading="lazy" src="/images/bbsac-0.png" alt=""  />
+</p>
+<p>Spotify launched their codes in ~2019 and now there are many services to leverage
 this feature, enabling you to get a sticker of your favorite songs code among
 other products like key fobs, mugs, shirts.</p>
 <p>The code can be scanned by the Spotify App and will play the scanned song / album
@@ -237,43 +178,57 @@ other products like key fobs, mugs, shirts.</p>
 <p>I&rsquo;ve seen posts on social media where people would print an albums cover with
 the corresponding code and hang it onto their walls. I loved the idea and started
 with a first batch until I discovered that you couldn&rsquo;t simply drag-and-drop
-the album cover plus code into your file explorer to get the image. It wouldn&rsquo;t
-appear anywhere in the desktop app and I&rsquo;ve searched for a long time until I
+the album cover plus code into your file explorer to get the image.</p>
+<p>It wouldn&rsquo;t appear anywhere in the desktop app and I&rsquo;ve searched for a long time until I
 decided to make this a friday night project.</p>
-<h2 id="components">Components<a hidden class="anchor" aria-hidden="true" href="#components">#</a></h2>
-<p>I&rsquo;ve decided to do this in Python due to the sheer amount of packages already present.</p>
-<p>There are three objectives here:</p>
-<ol>
-<li>Get the album cover through the Spotify API</li>
-<li>Get the corresponding code</li>
-<li>Merge it all together</li>
-</ol>
 <h3 id="album-cover">Album Cover<a hidden class="anchor" aria-hidden="true" href="#album-cover">#</a></h3>
-<p>SpotiPy uses the two environment variables for accessing the API - after that
-it was quite easy to grab the album cover:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">results</span> <span class="o">=</span> <span class="n">spotify</span><span class="o">.</span><span class="n">album</span><span class="p">(</span><span class="n">album_uri</span><span class="p">)</span>
+<p>For getting the album cover I used <a href="https://pypi.org/project/spotipy/">SpotiPy</a>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET need to be exported first</span>
+</span></span><span class="line"><span class="cl"><span class="n">spotipy</span> <span class="o">=</span> <span class="n">spotipy</span><span class="o">.</span><span class="n">Spotify</span><span class="p">(</span><span class="n">client_credentials_manager</span><span class="o">=</span><span class="n">SpotifyClientCredentials</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">results</span> <span class="o">=</span> <span class="n">spotipy</span><span class="o">.</span><span class="n">album</span><span class="p">(</span><span class="n">album_uri</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">link_to_cover</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s2">&#34;images&#34;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&#34;url&#34;</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="n">cover_size</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s2">&#34;images&#34;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&#34;height&#34;</span><span class="p">]</span>
-</span></span></code></pre></div><p>Results are already sorted from highest to lowest dimensions.</p>
+</span></span></code></pre></div><p>Everything I needed was in place; the results were already sorted from highest
+to lowest dimensions, URL and dimensions are accessible.</p>
 <h3 id="spotify-code">Spotify Code<a hidden class="anchor" aria-hidden="true" href="#spotify-code">#</a></h3>
 <p>Spotify has a <a href="https://www.spotifycodes.com/">website</a> up to download codes only, providing options for
 background colors, bar color, output format and size.</p>
-<p>I discovered that the download link was parameterized (bottom line):</p>
-<p><img loading="lazy" src="/images/bbsac-01.png" alt=""  />
+<p>I discovered that the download link was parameterized (bottom line), which saved
+me a lot of time.</p>
+<p><img loading="lazy" src="/images/bbsac-1.png" alt=""  />
 </p>
-<p>The covers I&rsquo;ve seen always matched the &ldquo;average&rdquo; color of the album art.
-For this I used <a href="https://pypi.org/project/colorthief/">colorthief</a>; the bar color would be picked depending on the mean RGB
-of the average colour. Size is determined by the album cover size.
-I plug those values into the URL and use PIL to download the picture.</p>
-<h3 id="putting-it-all-together">Putting it all together<a hidden class="anchor" aria-hidden="true" href="#putting-it-all-together">#</a></h3>
-<p>PIL turned out to be a good option to easily merge two pictures and was a pleasure to work with.</p>
-<p>After doing this I&rsquo;ve added argparse for more robust CLI-behaviour.</p>
-<h2 id="heading"><a hidden class="anchor" aria-hidden="true" href="#heading">#</a></h2>
-<p>Revisiting this the hardest part was trying to mitigate downloading the pictures to temp.
-I&rsquo;ve found this snipped on StackOverflow where somebody came up with a clever solution
-which I adjusted for my usecase:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">add</span> <span class="n">snippet</span> <span class="n">here</span>
-</span></span></code></pre></div><h2 id="heading-1"><a hidden class="anchor" aria-hidden="true" href="#heading-1">#</a></h2>
+<p>The covers I&rsquo;ve seen always matched the mean color of the album art.
+For this I used <a href="https://pypi.org/project/colorthief/">colorthief</a>. Size is determined by the album cover size.
+I plug those values into the URL and use <a href="https://pypi.org/project/Pillow/">Pillow</a> to download the picture.</p>
+<h3 id="getting-mean-color-from-file-object">Getting mean color from file object<a hidden class="anchor" aria-hidden="true" href="#getting-mean-color-from-file-object">#</a></h3>
+<p>Revisiting this the hardest part was trying to mitigate downloading the pictures
+to temp. I&rsquo;ve found this <a href="https://github.com/fengsp/color-thief-py/pull/16#issuecomment-706770344">snippet</a> on StackOverflow where somebody already came up
+with the following solution, which I adapted:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">with</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">()</span> <span class="k">as</span> <span class="n">file_object</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pillow_image</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">file_object</span><span class="p">,</span> <span class="s2">&#34;PNG&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cf</span> <span class="o">=</span> <span class="n">ColorThief</span><span class="p">(</span><span class="n">file_object</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">colours</span> <span class="o">=</span> <span class="n">cf</span><span class="o">.</span><span class="n">get_color</span><span class="p">()</span>
+</span></span></code></pre></div><h3 id="putting-it-all-together">Putting it all together<a hidden class="anchor" aria-hidden="true" href="#putting-it-all-together">#</a></h3>
+<p>Pillow also makes merging two pictures a breeze:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">final_height</span> <span class="o">=</span> <span class="n">album_code</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">cover_size</span>
+</span></span><span class="line"><span class="cl"><span class="n">im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s2">&#34;RGB&#34;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">cover_size</span><span class="p">,</span> <span class="n">final_height</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">im</span><span class="o">.</span><span class="n">paste</span><span class="p">(</span><span class="n">album_art</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">im</span><span class="o">.</span><span class="n">paste</span><span class="p">(</span><span class="n">album_code</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">cover_size</span><span class="p">))</span>
+</span></span></code></pre></div><p>After doing this I&rsquo;ve added argparse for more robust CLI-behaviour:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">/bin/python bbsac/bbsac.py -h
+</span></span><span class="line"><span class="cl">usage: bbsac.py <span class="o">[</span>-h<span class="o">]</span> -u URIS <span class="o">[</span>URIS ...<span class="o">]</span> <span class="o">[</span>-o OUT<span class="o">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">options:
+</span></span><span class="line"><span class="cl">  -h, --help          show this <span class="nb">help</span> message and <span class="nb">exit</span>
+</span></span><span class="line"><span class="cl">  -u URIS <span class="o">[</span>URIS ...<span class="o">]</span>  Spotify album URI<span class="o">(</span>s<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  -o OUT              path to output folder
+</span></span></code></pre></div><p>Spotify URIs (Uniform Resource Indicator) can be easily obtained through the share button.</p>
+<p>While this part is still manual, I&rsquo;m satisfied with the end result.</p>
+<p>My wall now looks like this:
+<img loading="lazy" src="/images/bbsac-2.jpg" alt=""  />
+</p>
+<p>You find the repo <a href="https://github.com/tilschuenemann/bring-back-spotify-album-code">here</a>.</p>
 
 
   </div>
@@ -387,18 +342,6 @@ which I adjusted for my usecase:</p>
             mybutton.style.opacity = "0";
         }
     };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            document.body.classList.add('dark');
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
 
 </script>
 <script>
