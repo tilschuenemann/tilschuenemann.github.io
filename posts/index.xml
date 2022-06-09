@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on Til Schünemann</title>
-    <link>https://tilschuenemann.github.io/posts/</link>
+    <link>https://www.tilschuenemann.github.io/posts/</link>
     <description>Recent content in Posts on Til Schünemann</description>
     <image>
-      <url>https://tilschuenemann.github.io/papermod-cover.png</url>
-      <link>https://tilschuenemann.github.io/papermod-cover.png</link>
+      <url>https://www.tilschuenemann.github.io/papermod-cover.png</url>
+      <link>https://www.tilschuenemann.github.io/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 24 May 2022 13:47:51 +0200</lastBuildDate><atom:link href="https://tilschuenemann.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 24 May 2022 13:47:51 +0200</lastBuildDate><atom:link href="https://www.tilschuenemann.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bring Back Spotify Album Codes!</title>
-      <link>https://tilschuenemann.github.io/posts/bbsac/</link>
+      <link>https://www.tilschuenemann.github.io/posts/bbsac/</link>
       <pubDate>Tue, 24 May 2022 13:47:51 +0200</pubDate>
       
-      <guid>https://tilschuenemann.github.io/posts/bbsac/</guid>
+      <guid>https://www.tilschuenemann.github.io/posts/bbsac/</guid>
       <description>Spotify launched their codes in ~2019 and now there are many services to leverage this feature, enabling you to get a sticker of your favorite songs code among other products like key fobs, mugs, shirts.
 The code can be scanned by the Spotify App and will play the scanned song / album / artist.
 I&amp;rsquo;ve seen posts on social media where people would print an albums cover with the corresponding code and hang it onto their walls.</description>

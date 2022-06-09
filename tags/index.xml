@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Til Schünemann</title>
-    <link>https://tilschuenemann.github.io/tags/</link>
+    <link>https://www.tilschuenemann.github.io/tags/</link>
     <description>Recent content in Tags on Til Schünemann</description>
     <image>
-      <url>https://tilschuenemann.github.io/papermod-cover.png</url>
-      <link>https://tilschuenemann.github.io/papermod-cover.png</link>
+      <url>https://www.tilschuenemann.github.io/papermod-cover.png</url>
+      <link>https://www.tilschuenemann.github.io/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 24 May 2022 13:47:51 +0200</lastBuildDate><atom:link href="https://tilschuenemann.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 24 May 2022 13:47:51 +0200</lastBuildDate><atom:link href="https://www.tilschuenemann.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>projects</title>
-      <link>https://tilschuenemann.github.io/tags/projects/</link>
+      <link>https://www.tilschuenemann.github.io/tags/projects/</link>
       <pubDate>Tue, 24 May 2022 13:47:51 +0200</pubDate>
       
-      <guid>https://tilschuenemann.github.io/tags/projects/</guid>
+      <guid>https://www.tilschuenemann.github.io/tags/projects/</guid>
       <description></description>
     </item>
     
