@@ -1,0 +1,34 @@
+
+:root {
+  --dracula-bg: #282A36;
+  --dracula-fg: #F8F8F2;
+  --dracula-cyan: #8BE9FD;
+  --dracula-green: #50FA7B;
+  --dracula-orange: #FFB86C;
+  --dracula-pink:#FF79C6 ;
+  --dracula-purple: #BD93F9;
+  --dracula-red : #FF5555;
+  --dracula-yellow: #F1FA8C;
+}
+
+a:link {
+    color: var(--dracula-cyan);
+  }
+
+a:hover {
+  color: var(--dracula-pink);
+}
+
+
+a:visited {
+  color: var(--dracula-yellow);
+}
+
+body {
+  background-color: var(--dracula-bg);
+  margin-left: 4%;
+}
+
+h1,h2,h3,p,div {
+  color: var(--dracula-fg);
+}
